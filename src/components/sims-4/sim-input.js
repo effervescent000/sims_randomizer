@@ -10,7 +10,6 @@ import {
 } from "../../helpers/sims-4-data";
 
 const SimInput = ({ setSimInputData, simInputData, output }) => {
-    console.log(simInputData);
     const [age, setAge] = useState(0);
     const [toddlerTrait, setToddlerTrait] = useState({});
     const [toddlerTraitInput, setToddlerTraitInput] = useState("none");
@@ -89,16 +88,18 @@ const SimInput = ({ setSimInputData, simInputData, output }) => {
 
     return (
         <div className="sim-input-wrapper">
-            <div className="input-wrapper">
-                <label htmlFor="ageSelect">Age</label>
-                <select name="ageSelect" onChange={handleChange}>
-                    <option value={0}>Baby</option>
-                    <option value={1}>Toddler</option>
-                    <option value={2}>Child</option>
-                    <option value={3}>Teen</option>
-                    <option value={4}>YA+</option>
-                </select>
-            </div>
+            {!output ? (
+                <div className="input-wrapper">
+                    <label htmlFor="ageSelect">Age</label>
+                    <select name="ageSelect" onChange={handleChange}>
+                        <option value={0}>Baby</option>
+                        <option value={1}>Toddler</option>
+                        <option value={2}>Child</option>
+                        <option value={3}>Teen</option>
+                        <option value={4}>YA+</option>
+                    </select>
+                </div>
+            ) : null}
             <div className="input-wrapper">
                 <label htmlFor="toddlerTraitSelect">Toddler trait</label>
                 <select name="toddlerTraitSelect" onChange={handleChange} value={toddlerTraitInput}>
