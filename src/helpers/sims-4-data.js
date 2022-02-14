@@ -1,4 +1,7 @@
 export const traits = {
+    none: {
+        label: "---",
+    },
     active: {
         label: "Active",
         conflicts: ["lazy"],
@@ -244,11 +247,18 @@ export const traits = {
 
 export const traitOptions = () => {
     return Object.keys(traits).map((key) => {
-        return <option value={key}>{traits[key].label}</option>;
+        return (
+            <option key={key} value={key}>
+                {traits[key].label}
+            </option>
+        );
     });
 };
 
 export const toddlerTraits = {
+    none: {
+        label: "---",
+    },
     angelic: {
         label: "Angelic",
         conflicts: [],
@@ -285,11 +295,18 @@ export const toddlerTraits = {
 
 export const toddlerTraitOptions = () => {
     return Object.keys(toddlerTraits).map((key) => {
-        return <option value={key}>{toddlerTraits[key].label}</option>;
+        return (
+            <option key={key} value={`${key}`}>
+                {toddlerTraits[key].label}
+            </option>
+        );
     });
 };
 
 export const aspirations = {
+    none: {
+        label: "---",
+    },
     friendOfTheAnimals: {
         label: "Friend of the Animals",
         requires: ["pets"],
@@ -481,6 +498,8 @@ export const aspirations = {
 
 export const aspirationOptions = () => {
     return Object.keys(aspirations).map((key) => (
-        <option value={key}>{aspirations[key].label}</option>
+        <option key={key} value={key}>
+            {aspirations[key].label}
+        </option>
     ));
 };
