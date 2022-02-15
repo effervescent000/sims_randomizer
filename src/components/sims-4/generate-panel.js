@@ -49,66 +49,94 @@ const GeneratePanel = (props) => {
 
         if (simInputData && Object.keys(simInputData).length > 0) {
             for (const traitObject of simInputData.traits) {
-                const traitName = Object.keys(traitObject)[0];
-                if (traitName === "artLover") {
-                    aspWeights = addWeight(aspWeights, {
-                        painterExtraordinaire: 5,
-                        musicalGenius: 2,
-                        bestsellingAuthor: 2,
-                        lordOfTheKnits: 2,
-                    });
-                    carWeights = addWeight(carWeights, {
-                        artsCritic: 5,
-                        author: 2,
-                        floralDesigner: 2,
-                        masterOfTheReal: 5,
-                        musician: 2,
-                        patronOfTheArts: 5,
-                        stylist: 2,
-                        trendSetter: 1,
-                    });
-                } else if (traitName === "creative") {
-                    aspWeights = addWeight(aspWeights, {
-                        painterExtraordinaire: 5,
-                        musicalGenius: 5,
-                        bestsellingAuthor: 5,
-                        masterActor: 4,
-                        masterChef: 3,
-                        lordOfTheKnits: 2,
-                    });
-                } else if (traitName === "foodie") {
-                    aspWeights = addWeight(aspWeights, {
-                        masterChef: 5,
-                        masterMixologist: 3,
-                    });
-                } else if (traitName === "geek") {
-                    aspWeights = addWeight(aspWeights, {
-                        bodybuilder: -2,
-                        renaissanceSim: 2,
-                        nerdBrain: 5,
-                        computerWhiz: 5,
-                    });
-                } else if (traitName === "good") {
-                    aspWeights = addWeight(aspWeights, {
-                        friendOfTheAnimals: 2,
-                        publicEnemy: -5,
-                        chiefOfMischief: -5,
-                        villainousValentine: -5,
-                        soulmate: 1,
-                        friendOfTheWorld: 2,
-                        goodVampire: 2,
-                    });
-                } else if (traitName === "perfectionist") {
-                    aspWeights = addWeight(aspWeights, {
-                        painterExtraordinaire: 5,
-                        musicalGenius: 5,
-                        bestsellingAuthor: 5,
-                        masterMaker: 5,
-                        masterChef: 5,
-                        lordOfTheKnits: 2,
-                    });
+                if (Object.keys(traitObject).length > 0) {
+                    const traitName = Object.keys(traitObject)[0];
+                    if (traitName === "artLover") {
+                        aspWeights = addWeight(aspWeights, {
+                            painterExtraordinaire: 5,
+                            musicalGenius: 2,
+                            bestsellingAuthor: 2,
+                            lordOfTheKnits: 2,
+                        });
+                        carWeights = addWeight(carWeights, {
+                            artsCritic: 5,
+                            author: 2,
+                            floralDesigner: 2,
+                            masterOfTheReal: 5,
+                            musician: 2,
+                            patronOfTheArts: 5,
+                            stylist: 2,
+                            trendSetter: 1,
+                        });
+                    } else if (traitName === "creative") {
+                        aspWeights = addWeight(aspWeights, {
+                            painterExtraordinaire: 5,
+                            musicalGenius: 5,
+                            bestsellingAuthor: 5,
+                            masterActor: 4,
+                            masterChef: 3,
+                            lordOfTheKnits: 2,
+                        });
+                        carWeights = addWeight(carWeights, {
+                            artsCritic: 1,
+                            author: 5,
+                            chef: 3,
+                            floralDesigner: 3,
+                            masterOfTheReal: 5,
+                            musician: 5,
+                            patronOfTheArts: 1,
+                            stylist: 4,
+                            trendSetter: 2,
+                        });
+                    } else if (traitName === "foodie") {
+                        aspWeights = addWeight(aspWeights, {
+                            masterChef: 5,
+                            masterMixologist: 3,
+                        });
+                        carWeights = addWeight(carWeights, {
+                            chef: 5,
+                            foodCritic: 5,
+                            mixologist: 3,
+                        });
+                    } else if (traitName === "geek") {
+                        aspWeights = addWeight(aspWeights, {
+                            bodybuilder: -2,
+                            renaissanceSim: 2,
+                            nerdBrain: 5,
+                            computerWhiz: 5,
+                        });
+                    } else if (traitName === "good") {
+                        aspWeights = addWeight(aspWeights, {
+                            friendOfTheAnimals: 2,
+                            publicEnemy: -5,
+                            chiefOfMischief: -5,
+                            villainousValentine: -5,
+                            soulmate: 1,
+                            friendOfTheWorld: 2,
+                            goodVampire: 2,
+                        });
+                    } else if (traitName === "perfectionist") {
+                        aspWeights = addWeight(aspWeights, {
+                            painterExtraordinaire: 5,
+                            musicalGenius: 5,
+                            bestsellingAuthor: 5,
+                            masterMaker: 5,
+                            masterChef: 5,
+                            lordOfTheKnits: 2,
+                        });
+                        carWeights = addWeight(carWeights, {
+                            artsCritic: 4,
+                            author: 5,
+                            bodybuilder: 3,
+                            doctor: 3,
+                            foodCritic: 5,
+                            masterOfTheReal: 5,
+                            patronOfTheArts: 4,
+                        });
+                    }
                 }
             }
+
             setAspirationWeights(aspWeights);
             setCareerWeights(carWeights);
         }

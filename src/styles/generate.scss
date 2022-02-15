@@ -2,12 +2,21 @@
     display: flex;
     gap: 2em;
     .sim-output-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
         .traits-wrapper {
             display: flex;
             gap: 1em;
         }
         .aspirations-wrapper {
             .aspiration-wrapper {
+                display: grid;
+                grid-template-columns: 12em 1fr;
+            }
+        }
+        .careers-wrapper {
+            .career-wrapper {
                 display: grid;
                 grid-template-columns: 12em 1fr;
             }
