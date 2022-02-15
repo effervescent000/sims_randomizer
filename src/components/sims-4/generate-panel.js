@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import SimInput from "./sim-input";
 import SimOutput from "./sim-output";
 
-import { aspirations } from "../../helpers/sims-4-data";
+import { aspirations, careers } from "../../helpers/sims-4-data";
 import { SettingsContext } from "../../settings-context";
 
 const GeneratePanel = (props) => {
@@ -43,6 +43,9 @@ const GeneratePanel = (props) => {
         for (const aspiration of Object.keys(aspirations)) {
             aspWeights[aspiration] = 0;
         }
+        for (const career of Object.keys(careers)) {
+            carWeights[career] = 0;
+        }
 
         if (simInputData && Object.keys(simInputData).length > 0) {
             for (const traitObject of simInputData.traits) {
@@ -53,6 +56,16 @@ const GeneratePanel = (props) => {
                         musicalGenius: 2,
                         bestsellingAuthor: 2,
                         lordOfTheKnits: 2,
+                    });
+                    carWeights = addWeight(carWeights, {
+                        artsCritic: 5,
+                        author: 2,
+                        floralDesigner: 2,
+                        masterOfTheReal: 5,
+                        musician: 2,
+                        patronOfTheArts: 5,
+                        stylist: 2,
+                        trendSetter: 1,
                     });
                 } else if (traitName === "creative") {
                     aspWeights = addWeight(aspWeights, {
@@ -97,6 +110,7 @@ const GeneratePanel = (props) => {
                 }
             }
             setAspirationWeights(aspWeights);
+            setCareerWeights(carWeights);
         }
     }, [simInputData]);
 
