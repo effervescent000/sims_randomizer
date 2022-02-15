@@ -312,3 +312,190 @@ export const traits = {
         label: "Workaholic",
     },
 };
+
+export const lifetimeWishes = {
+    aquarium: {
+        label: "Presenting the Perfect Private Aquarium",
+    },
+    architectureCareer: {
+        label: "Home Design Hotshot",
+        requires: ["ambitions"],
+    },
+    athleticCareer: {
+        label: "Become a Superstar Athlete",
+    },
+    author: {
+        label: "Professional Author",
+    },
+    businessCareer: {
+        label: "CEO of a Mega-Corporation",
+    },
+    celebrity: {
+        label: "Lifestyle of the Rich and Famous",
+        requires: ["lateNight"],
+    },
+    chessLegend: {
+        label: "Chess Legend",
+    },
+    criminalCareer: {
+        label: "Become a Master Thief",
+    },
+    criminalEvilCareer: {
+        label: "The Emperor of Evil",
+    },
+    culinaryCareer: {
+        label: "Celebrated Five-Star Chef",
+    },
+    culinaryLibrarian: {
+        label: "The Culinary Librarian",
+    },
+    daVinci: {
+        label: "Descendant of da Vinci",
+        requires: ["ambitions"],
+    },
+    filmActingCareer: {
+        label: "Superstar Actor",
+        requires: ["lateNight"],
+    },
+    filmDirectingCareer: {
+        label: "Distinguished Director",
+        requires: ["lateNight"],
+    },
+    firefighterCareer: {
+        label: "Firefighter Super Hero",
+        requires: ["ambitions"],
+    },
+    gallery: {
+        label: "World-Class Gallery",
+        requires: ["worldAdventures"],
+    },
+    garden: {
+        label: "The Perfect Garden",
+    },
+    ghostHunterCareer: {
+        label: "Paranormal Profiteer",
+        requires: ["ambitions"],
+    },
+    goldDigger: {
+        label: "Gold Digger",
+    },
+    goldenTongue: {
+        label: "Golden Tongue, Golden Fingers",
+    },
+    greatExplorer: {
+        label: "Great Explorer",
+        requires: ["worldAdventures"],
+    },
+    heartbreaker: {
+        label: "Heartbreaker",
+    },
+    illustriousAuthor: {
+        label: "Illustrious Author",
+    },
+    investigatorCareer: {
+        label: "Pervasive Private Eye",
+        requires: ["ambitions"],
+    },
+    jackOfAllTrades: {
+        label: "Jack of All Trades",
+    },
+    journalismCareer: {
+        label: "Star News Anchor",
+    },
+    lapOfLuxury: {
+        label: "Living in the Lap of Luxury",
+    },
+    lawEnforcementForensicCareer: {
+        label: "Forensic Specialist: Dynamic DNA Profiler",
+    },
+    lawEnforcementSpecialAgentCareer: {
+        label: "International Super Spy",
+    },
+    martialArts: {
+        label: "Martial Arts Master",
+        requires: ["worldAdventures"],
+    },
+    masterOfTheArts: {
+        label: "Master of the Arts",
+    },
+    medicalCareer: {
+        label: "World Renowned Surgeon",
+    },
+    militaryCareer: {
+        label: "Become an Astronaut",
+    },
+    mixologist: {
+        label: "Master Mixologist",
+        requires: ["lateNight"],
+    },
+    monsterMaker: {
+        label: "Monster Maker",
+        requires: ["ambitions"],
+    },
+    musicRockCareer: {
+        label: "Rock Star",
+    },
+    musicSkills: {
+        label: "One Sim Band",
+        requires: ["lateNight"],
+    },
+    musicSymphonicCareer: {
+        label: "Hit Movie Composer",
+    },
+    nectar: {
+        label: "Bottomless Nectar Cellar",
+        requires: ["worldAdventures"],
+    },
+    perfectMind: {
+        label: "Perfect Mind, Perfect Body",
+    },
+    physicalPerfection: {
+        label: "Physical Perfection",
+        requires: ["worldAdventures"],
+    },
+    politicalCareer: {
+        label: "Leader of the Free World",
+    },
+    privateMuseum: {
+        label: "Private Museum",
+        requires: ["worldAdventures"],
+    },
+    renaissanceSim: {
+        label: "Renaissance Sim",
+    },
+    romancer: {
+        label: "Master Romancer",
+        requires: ["lateNight"],
+    },
+    scienceCareer: {
+        label: "Become a Creature-Robot Cross Breeder",
+    },
+    seasonedTraveler: {
+        label: "Seasoned Traveler",
+        requires: ["worldAdventures"],
+    },
+    stealing: {
+        label: "Possession is Nine Tenths of the Law",
+        requires: ["ambitions"],
+    },
+    stylistCareer: {
+        label: "Fashion Phenomenon",
+        requires: ["ambitions"],
+    },
+    superPopular: {
+        label: "Super Popular",
+    },
+    surroundedByFamily: {
+        label: "Surrounded by Family",
+    },
+    swimmingInCash: {
+        label: "Swimming in Cash",
+    },
+    tinkerer: {
+        label: "The Tinkerer",
+    },
+    visionary: {
+        label: "Visionary",
+        requires: ["worldAdventures"],
+    },
+};

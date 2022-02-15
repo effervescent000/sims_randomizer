@@ -69,6 +69,22 @@ const GeneratePanel = (props) => {
                             stylist: 2,
                             trendSetter: 1,
                         });
+                    } else if (traitName === "cheerful") {
+                        aspWeights = addWeight(aspWeights, {
+                            beachLife: 1,
+                            chiefOfMischief: 1,
+                            cityNative: 1,
+                            countryCaretaker: 1,
+                            friendOfTheAnimals: 1,
+                            friendOfTheWorld: 1,
+                            innerPeace: 1,
+                            jokeStar: 2,
+                            selfCareSpecialist: 1,
+                        });
+                        carWeights = addWeight(carWeights, {
+                            comedian: 1,
+                            eSportGamer: 1,
+                        });
                     } else if (traitName === "creative") {
                         aspWeights = addWeight(aspWeights, {
                             painterExtraordinaire: 5,
@@ -161,6 +177,15 @@ const GeneratePanel = (props) => {
                             patronOfTheArts: 4,
                         });
                     }
+                }
+            }
+
+            if (Object.keys(simInputData.aspiration).length > 0) {
+                const asp = Object.keys(simInputData.aspiration)[0];
+                if (asp === "masterChef") {
+                    carWeights = addWeight(carWeights, {
+                        masterChef: 5,
+                    });
                 }
             }
 
