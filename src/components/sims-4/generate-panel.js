@@ -105,6 +105,14 @@ const GeneratePanel = (props) => {
                             nerdBrain: 5,
                             computerWhiz: 5,
                         });
+                        carWeights = addWeight(carWeights, {
+                            computerEngineer: 5,
+                            eSportGamer: 5,
+                            freelancer: 3,
+                            mechanicalEngineer: 4,
+                            scientist: 5,
+                            startUpEntrepreneur: 3,
+                        });
                     } else if (traitName === "good") {
                         aspWeights = addWeight(aspWeights, {
                             friendOfTheAnimals: 2,
@@ -114,6 +122,24 @@ const GeneratePanel = (props) => {
                             soulmate: 1,
                             friendOfTheWorld: 2,
                             goodVampire: 2,
+                        });
+                    } else if (traitName === "outgoing") {
+                        aspWeights = addWeight(aspWeights, {
+                            friendOfTheAnimals: 4,
+                            masterActor: 1,
+                            friendOfTheWorld: 5,
+                            jokeStar: 1,
+                            leaderOfThePack: 4,
+                            partyAnimal: 3,
+                            worldFamousCelebrity: 2,
+                        });
+                        carWeights = addWeight(carWeights, {
+                            actor: 1,
+                            comedian: 1,
+                            internetPersonality: 3,
+                            mixologist: 1,
+                            politician: 3,
+                            publicRelations: 2,
                         });
                     } else if (traitName === "perfectionist") {
                         aspWeights = addWeight(aspWeights, {

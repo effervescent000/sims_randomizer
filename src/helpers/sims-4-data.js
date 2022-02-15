@@ -349,7 +349,6 @@ export const aspirations = {
         label: "Eco Innovator",
         requires: ["ecoLifestyle"],
     },
-
     extremeSportsEnthusiast: {
         label: "Extreme Sports Enthusiast",
         requires: ["snowyEscape"],
@@ -564,7 +563,7 @@ export const careers = {
         root: "engineer",
         requires: ["discoverUniversity"],
     },
-    convertOperator: {
+    covertOperator: {
         label: "Covert Operator",
         root: "military",
         requires: ["strangerVille"],
