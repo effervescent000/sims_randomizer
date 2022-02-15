@@ -7,7 +7,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./components/header";
 
-import GeneratePanel from "./components/sims-4/generate-panel";
+import Sims4Wrapper from "./components/sims-4/sims-4-wrapper";
+import Sims3Wrapper from "./components/sims-3/sims-3-wrapper";
 import { SettingsContext } from "./settings-context";
 
 function App() {
@@ -24,7 +25,14 @@ function App() {
         <div className="App">
             <SettingsContext.Provider value={{ settings, setSettings }}>
                 <Header />
-                <GeneratePanel />
+                <Switch>
+                    <Route exact path="/">
+                        <Sims4Wrapper />
+                    </Route>
+                    <Route path="/ts3">
+                        <Sims3Wrapper />
+                    </Route>
+                </Switch>
             </SettingsContext.Provider>
         </div>
     );

@@ -313,6 +313,16 @@ export const traits = {
     },
 };
 
+export const traitOptions = () => {
+    return Object.keys(traits).map((key) => {
+        return (
+            <option key={key} value={key}>
+                {traits[key].label}
+            </option>
+        );
+    });
+};
+
 export const lifetimeWishes = {
     aquarium: {
         label: "Presenting the Perfect Private Aquarium",
@@ -498,4 +508,12 @@ export const lifetimeWishes = {
         label: "Visionary",
         requires: ["worldAdventures"],
     },
+};
+
+export const lifetimeWishOptions = () => {
+    return Object.keys(lifetimeWishes).map((key) => (
+        <option key={key} value={key}>
+            {lifetimeWishes[key].label}
+        </option>
+    ));
 };
