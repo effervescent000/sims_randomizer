@@ -1,23 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import SimInput from "./sim-input";
 import SimOutput from "./sim-output";
 
 import { aspirations } from "../../helpers/sims-4-data";
+import { SettingsContext } from "../../settings-context";
 
 const GeneratePanel = (props) => {
+    const { settings } = useContext(SettingsContext);
     const [simInputData, setSimInputData] = useState({
         age: 0,
         toddlerTrait: {},
         traits: [],
         aspiration: {},
     });
-    // const aspirationWeights = {};
-    const careerWeights = {};
+    const [careerWeights, setCareerWeights] = useState({});
     const [aspirationWeights, setAspirationWeights] = useState({});
 
+    const addWeight = (weights, newWeights) => {
+        for (const [key, value] of Object.entries(newWeights)) {
+            if (checkRequirements(key)) {
+                weights[key] += value;
+            }
+        }
+        return weights;
+    };
+
+    const checkRequirements = (obj) => {
+        if (obj.requires && obj.requires.length > 0) {
+            for (const requirement of obj.requires) {
+                if (!settings[requirement]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    };
+
     useEffect(() => {
-        const aspWeights = {};
+        let aspWeights = {};
         for (const aspiration of Object.keys(aspirations)) {
             aspWeights[aspiration] = 0;
         }
@@ -26,40 +47,52 @@ const GeneratePanel = (props) => {
             for (const traitObject of simInputData.traits) {
                 const traitName = Object.keys(traitObject)[0];
                 if (traitName === "artLover") {
-                    aspWeights.painterExtraordinaire += 5;
-                    aspWeights.musicalGenius += 2;
-                    aspWeights.bestsellingAuthor += 2;
-                    aspWeights.lordOfTheKnits += 2;
+                    aspWeights = addWeight(aspWeights, {
+                        painterExtraordinaire: 5,
+                        musicalGenius: 2,
+                        bestsellingAuthor: 2,
+                        lordOfTheKnits: 2,
+                    });
                 } else if (traitName === "creative") {
-                    aspWeights.painterExtraordinaire += 5;
-                    aspWeights.musicalGenius += 5;
-                    aspWeights.bestsellingAuthor += 5;
-                    aspWeights.masterActor += 4;
-                    aspWeights.masterChef += 3;
-                    aspWeights.lordOfTheKnits += 2;
+                    aspWeights = addWeight(aspWeights, {
+                        painterExtraordinaire: 5,
+                        musicalGenius: 5,
+                        bestsellingAuthor: 5,
+                        masterActor: 4,
+                        masterChef: 3,
+                        lordOfTheKnits: 2,
+                    });
                 } else if (traitName === "foodie") {
-                    aspWeights.masterChef += 5;
-                    aspWeights.masterMixologist += 3;
+                    aspWeights = addWeight(aspWeights, {
+                        masterChef: 5,
+                        masterMixologist: 3,
+                    });
                 } else if (traitName === "geek") {
-                    aspWeights.bodybuilder += -2;
-                    aspWeights.renaissanceSim += 2;
-                    aspWeights.nerdBrain += 5;
-                    aspWeights.computerWhiz += 5;
+                    aspWeights = addWeight(aspWeights, {
+                        bodybuilder: -2,
+                        renaissanceSim: 2,
+                        nerdBrain: 5,
+                        computerWhiz: 5,
+                    });
                 } else if (traitName === "good") {
-                    aspWeights.friendOfTheAnimals += 2;
-                    aspWeights.publicEnemy += -5;
-                    aspWeights.chiefOfMischief += -5;
-                    aspWeights.villainousValentine += -5;
-                    aspWeights.soulmate += 1;
-                    aspWeights.friendOfTheWorld += 2;
-                    aspWeights.goodVampire += 2;
+                    aspWeights = addWeight(aspWeights, {
+                        friendOfTheAnimals: 2,
+                        publicEnemy: -5,
+                        chiefOfMischief: -5,
+                        villainousValentine: -5,
+                        soulmate: 1,
+                        friendOfTheWorld: 2,
+                        goodVampire: 2,
+                    });
                 } else if (traitName === "perfectionist") {
-                    aspWeights.painterExtraordinaire += 5;
-                    aspWeights.musicalGenius += 5;
-                    aspWeights.bestsellingAuthor += 5;
-                    aspWeights.masterMaker += 5;
-                    aspWeights.masterChef += 5;
-                    aspWeights.lordOfTheKnits += 2;
+                    aspWeights = addWeight(aspWeights, {
+                        painterExtraordinaire: 5,
+                        musicalGenius: 5,
+                        bestsellingAuthor: 5,
+                        masterMaker: 5,
+                        masterChef: 5,
+                        lordOfTheKnits: 2,
+                    });
                 }
             }
             setAspirationWeights(aspWeights);

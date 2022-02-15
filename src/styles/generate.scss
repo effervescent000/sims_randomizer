@@ -1,0 +1,16 @@
+.generate-panel {
+    display: flex;
+    gap: 2em;
+    .sim-output-wrapper {
+        .traits-wrapper {
+            display: flex;
+            gap: 1em;
+        }
+        .aspirations-wrapper {
+            .aspiration-wrapper {
+                display: grid;
+                grid-template-columns: 12em 1fr;
+            }
+        }
+    }
+}

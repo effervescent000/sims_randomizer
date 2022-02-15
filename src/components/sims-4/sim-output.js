@@ -8,7 +8,6 @@ const SimOutput = ({ simInputData, weights }) => {
     useEffect(() => {
         renderAspirations();
         setTraits(simInputData.traits);
-        console.log(weights);
     }, [weights, simInputData]);
 
     const renderTraits = () => {
