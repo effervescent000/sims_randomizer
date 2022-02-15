@@ -23,17 +23,19 @@ function App() {
 
     return (
         <div className="App">
-            <SettingsContext.Provider value={{ settings, setSettings }}>
-                <Header />
-                <Switch>
-                    <Route exact path="/">
-                        <Sims4Wrapper />
-                    </Route>
-                    <Route path="/ts3">
-                        <Sims3Wrapper />
-                    </Route>
-                </Switch>
-            </SettingsContext.Provider>
+            <Router>
+                <SettingsContext.Provider value={{ settings, setSettings }}>
+                    <Header />
+                    <Switch>
+                        <Route exact path="/">
+                            <Sims4Wrapper />
+                        </Route>
+                        <Route path="/ts3">
+                            <Sims3Wrapper />
+                        </Route>
+                    </Switch>
+                </SettingsContext.Provider>
+            </Router>
         </div>
     );
 }
