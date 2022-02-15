@@ -307,97 +307,154 @@ export const aspirations = {
     none: {
         label: "---",
     },
-    friendOfTheAnimals: {
-        label: "Friend of the Animals",
-        requires: ["pets"],
+    academic: {
+        label: "Academic",
+        requires: ["discoverUniversity"],
     },
-    bodybuilder: {
-        label: "Bodybuilder",
-    },
-    extremeSportsEnthusiast: {
-        label: "Extreme Sports Enthusiast",
-        requires: ["snowyEscape"],
-    },
-    painterExtraordinaire: {
-        label: "Painter Extraordinaire",
-    },
-    musicalGenius: {
-        label: "Musical Genius",
-    },
-    bestsellingAuthor: {
-        label: "Bestselling Author",
-    },
-    masterActor: {
-        label: "Master Actor/Actress",
-        requires: ["getFamous"],
-    },
-    masterMaker: {
-        label: "Master Maker",
-        requires: ["ecoLifestyle"],
-    },
-    lordOfTheKnits: {
-        label: "Lord/Lady of the Knits",
-        requires: ["niftyKnitting"],
-    },
-    publicEnemy: {
-        label: "Public Enemy`",
-    },
-    chiefOfMischief: {
-        label: "Chief of Mischief",
-    },
-    villainousValentine: {
-        label: "Villainous Valentine",
-    },
-    successfulLineage: {
-        label: "Successful Lineage",
-    },
-    bigHappyFamily: {
-        label: "Big Happy Family",
-    },
-    vampireFamily: {
-        label: "Vampire Family",
-        requires: ["vampires"],
-    },
-    superParent: {
-        label: "Super Parent",
-        requires: ["parenthood"],
-    },
-    masterChef: {
-        label: "Master Chef",
-    },
-    masterMixologist: {
-        label: "Master Mixologist",
-    },
-    fabulouslyWealthy: {
-        label: "Fabulously Wealthy",
-    },
-    mansionBaron: {
-        label: "Mansion Baron",
-    },
-    renaissanceSim: {
-        label: "Renaissance Sim",
-    },
-    nerdBrain: {
-        label: "Nerd Brain",
-    },
-    computerWhiz: {
-        label: "Computer Whiz",
-    },
-    masterVampire: {
-        label: "Master Vampire",
-        requires: ["vampires"],
+    anglingAce: {
+        label: "Angling Ace",
     },
     archaeologyScholar: {
         label: "Archaeology Scholar",
         requires: ["jungleAdventure"],
     },
-    spellcraftAndSorcery: {
-        label: "Spellcraft & Sorcery",
+    beachLife: {
+        label: "Beach Life",
+        requires: ["islandLiving"],
+    },
+    bestsellingAuthor: {
+        label: "Bestselling Author",
+    },
+    bigHappyFamily: {
+        label: "Big Happy Family",
+    },
+    bodybuilder: {
+        label: "Bodybuilder",
+    },
+    chiefOfMischief: {
+        label: "Chief of Mischief",
+    },
+    cityNative: {
+        label: "City Native",
+        requires: ["cityLiving"],
+    },
+    computerWhiz: {
+        label: "Computer Whiz",
+    },
+    countryCaretaker: {
+        label: "Country Caretaker",
+        requires: ["cottageLiving"],
+    },
+    ecoInnovator: {
+        label: "Eco Innovator",
+        requires: ["ecoLifestyle"],
+    },
+
+    extremeSportsEnthusiast: {
+        label: "Extreme Sports Enthusiast",
+        requires: ["snowyEscape"],
+    },
+    fabulouslyFilthy: {
+        label: "Fabulously Filthy",
+        requires: ["bustTheDust"],
+    },
+    fabulouslyWealthy: {
+        label: "Fabulously Wealthy",
+    },
+    freelanceBotanist: {
+        label: "Freelance Botanist",
+    },
+    friendOfTheAnimals: {
+        label: "Friend of the Animals",
+        requires: ["pets"],
+    },
+    friendOfTheWorld: {
+        label: "Friend of the World",
+    },
+    goodVampire: {
+        label: "Good Vampire",
+        requires: ["vampires"],
+    },
+    innerPeace: {
+        label: "Inner Peace",
+        requires: ["spaDay"],
+    },
+    jokeStar: {
+        label: "Joke Star",
+    },
+    jungleExplorer: {
+        label: "Jungle Explorer",
+        requires: ["jungleAdventure"],
+    },
+    leaderOfThePack: {
+        label: "leaderOfThePack",
+        requires: ["getTogether"],
+    },
+    lordOfTheKnits: {
+        label: "Lord/Lady of the Knits",
+        requires: ["niftyKnitting"],
+    },
+    mansionBaron: {
+        label: "Mansion Baron",
+    },
+    masterActor: {
+        label: "Master Actor/Actress",
+        requires: ["getFamous"],
+    },
+    masterChef: {
+        label: "Master Chef",
+    },
+    masterMaker: {
+        label: "Master Maker",
+        requires: ["ecoLifestyle"],
+    },
+    masterMixologist: {
+        label: "Master Mixologist",
+    },
+    masterVampire: {
+        label: "Master Vampire",
+        requires: ["vampires"],
+    },
+    mtKomorebiSightseer: {
+        label: "Mt. Komorebi Sightseer",
+        requires: ["snowyEscape"],
+    },
+    musicalGenius: {
+        label: "Musical Genius",
+    },
+    neighborhoodConfidante: {
+        label: "Neighborhood Confidante",
+    },
+    nerdBrain: {
+        label: "Nerd Brain",
+    },
+    outdoorEnthusiast: {
+        label: "Outdoor Enthusiast",
+        requires: ["outdoorRetreat"],
+    },
+    painterExtraordinaire: {
+        label: "Painter Extraordinaire",
+    },
+    partyAnimal: {
+        label: "Party Animal",
+    },
+    perfectlyPristine: {
+        label: "Perfectly Pristine",
+        requires: ["bustTheDust"],
+    },
+    publicEnemy: {
+        label: "Public Enemy`",
+    },
+    purveyorOfPotions: {
+        label: "Purveyor of Potions",
         requires: ["realmOfMagic"],
     },
-    academic: {
-        label: "Academic",
-        requires: ["discoverUniversity"],
+    renaissanceSim: {
+        label: "Renaissance Sim",
+    },
+    selfCareSpecialist: {
+        label: "Self-Care Specialist",
+        requires: ["spaDay"],
     },
     serialRomantic: {
         label: "serialRomantic",
@@ -405,90 +462,34 @@ export const aspirations = {
     soulmate: {
         label: "Soulmate",
     },
-    cityNative: {
-        label: "City Native",
-        requires: ["cityLiving"],
+    spellcraftAndSorcery: {
+        label: "Spellcraft & Sorcery",
+        requires: ["realmOfMagic"],
     },
     strangerVilleMystery: {
         label: "StrangerVille Mystery",
         requires: ["strangerville"],
     },
-    beachLife: {
-        label: "Beach Life",
-        requires: ["islandLiving"],
+    successfulLineage: {
+        label: "Successful Lineage",
     },
-    mtKomorebiSightseer: {
-        label: "Mt. Komorebi Sightseer",
-        requires: ["snowyEscape"],
-    },
-    perfectlyPristine: {
-        label: "Perfectly Pristine",
-        requires: ["bustTheDust"],
-    },
-    fabulouslyFilthy: {
-        label: "Fabulously Filthy",
-        requires: ["bustTheDust"],
-    },
-    freelanceBotanist: {
-        label: "Freelance Botanist",
+    superParent: {
+        label: "Super Parent",
+        requires: ["parenthood"],
     },
     theCurator: {
         label: "The Curator",
     },
-    anglingAce: {
-        label: "Angling Ace",
-    },
-    outdoorEnthusiast: {
-        label: "Outdoor Enthusiast",
-        requires: ["outdoorRetreat"],
-    },
-    jungleExplorer: {
-        label: "Jungle Explorer",
-        requires: ["jungleAdventure"],
-    },
-    purveyorOfPotions: {
-        label: "Purveyor of Potions",
-        requires: ["realmOfMagic"],
-    },
-    ecoInnovator: {
-        label: "Eco Innovator",
-        requires: ["ecoLifestyle"],
-    },
-    countryCaretaker: {
-        label: "Country Caretaker",
-        requires: ["cottageLiving"],
-    },
-    jokeStar: {
-        label: "Joke Star",
-    },
-    partyAnimal: {
-        label: "Party Animal",
-    },
-    friendOfTheWorld: {
-        label: "Friend of the World",
-    },
-    neighborhoodConfidante: {
-        label: "Neighborhood Confidante",
-    },
-    leaderOfThePack: {
-        label: "leaderOfThePack",
-        requires: ["getTogether"],
-    },
-    goodVampire: {
-        label: "Good Vampire",
+    vampireFamily: {
+        label: "Vampire Family",
         requires: ["vampires"],
+    },
+    villainousValentine: {
+        label: "Villainous Valentine",
     },
     worldFamousCelebrity: {
         label: "World-Famous Celebrity",
         requires: ["getFamous"],
-    },
-    innerPeace: {
-        label: "Inner Peace",
-        requires: ["spaDay"],
-    },
-    selfCareSpecialist: {
-        label: "Self-Care Specialist",
-        requires: ["spaDay"],
     },
     zenGuru: {
         label: "Zen Guru",
