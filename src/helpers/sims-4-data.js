@@ -386,7 +386,7 @@ export const aspirations = {
         requires: ["jungleAdventure"],
     },
     leaderOfThePack: {
-        label: "leaderOfThePack",
+        label: "Leader of the Pack",
         requires: ["getTogether"],
     },
     lordOfTheKnits: {

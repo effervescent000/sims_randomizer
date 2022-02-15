@@ -26,9 +26,10 @@ const GeneratePanel = (props) => {
         return weights;
     };
 
-    const checkRequirements = (obj) => {
-        if (obj.requires && obj.requires.length > 0) {
-            for (const requirement of obj.requires) {
+    const checkRequirements = (key) => {
+        key = aspirations[key] ? aspirations[key] : careers[key];
+        if (key.requires && key.requires.length > 0) {
+            for (const requirement of key.requires) {
                 if (!settings[requirement]) {
                     return false;
                 }

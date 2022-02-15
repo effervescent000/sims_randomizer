@@ -24,6 +24,7 @@ const SettingsModal = ({ isOpen, toggle }) => {
                     getTogether: settings.getTogether || true,
                     cityLiving: settings.cityLiving || true,
                     vampires: settings.vampires || true,
+                    discoverUniversity: settings.discoverUniversity || true,
                 }}
                 onSubmit={(values) => {
                     setSettingValues(values);
@@ -33,6 +34,7 @@ const SettingsModal = ({ isOpen, toggle }) => {
                     <Checkbox label="Get Together" name="getTogether" />
                     <Checkbox label="City Living" name="cityLiving" />
                     <Checkbox label="Vampires" name="vampires" />
+                    <Checkbox label="Discover University" name="discoverUniversity" />
                     <button type="submit">Save</button>
                 </Form>
             </Formik>

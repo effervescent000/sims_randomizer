@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import sortArray from "sort-array";
 
+import { aspirations, careers } from "../../helpers/sims-4-data";
+
 const SimOutput = ({ simInputData, weights }) => {
     const [aspirationRender, setAspirationRender] = useState([]);
     const [careerRender, setCareerRender] = useState([]);
@@ -35,7 +37,7 @@ const SimOutput = ({ simInputData, weights }) => {
             aspirationArray.map((aspiration) => {
                 return (
                     <div key={aspiration.name} className="aspiration-wrapper">
-                        <div className="name">{aspiration.name}</div>
+                        <div className="name">{aspirations[aspiration.name].label}</div>
                         <div className="weight">{aspiration.weight}</div>
                     </div>
                 );
@@ -56,7 +58,7 @@ const SimOutput = ({ simInputData, weights }) => {
             careersArray.map((career) => {
                 return (
                     <div key={career.name} className="career-wrapper">
-                        <div className="name">{career.name}</div>
+                        <div className="name">{careers[career.name].label}</div>
                         <div className="weight">{career.weight}</div>
                     </div>
                 );
