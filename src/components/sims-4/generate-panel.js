@@ -39,6 +39,7 @@ const GeneratePanel = (props) => {
 
     useEffect(() => {
         let aspWeights = {};
+        let carWeights = {};
         for (const aspiration of Object.keys(aspirations)) {
             aspWeights[aspiration] = 0;
         }

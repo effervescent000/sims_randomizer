@@ -503,3 +503,226 @@ export const aspirationOptions = () => {
         </option>
     ));
 };
+
+export const careers = {
+    none: {
+        label: "---",
+    },
+    actor: {
+        label: "Actor/Actress",
+        root: "actor",
+        requires: ["getFamous"],
+    },
+    administrator: {
+        label: "Administrator",
+        root: "education",
+        requires: ["discoverUniversity"],
+    },
+    artsCritic: {
+        label: "Arts Critic",
+        root: "critic",
+        requires: ["cityLiving"],
+    },
+    author: {
+        label: "Author",
+        root: "writer",
+    },
+    bodybuilder: {
+        label: "Bodybuilder",
+        root: "athlete",
+    },
+    boss: {
+        label: "Boss",
+        root: "criminal",
+    },
+    botanist: {
+        label: "Botanist",
+        root: "gardener",
+        requires: ["seasons"],
+    },
+    charityOrganizer: {
+        label: "Charity Organizer",
+        root: "politician",
+        requires: ["cityLiving"],
+    },
+    chef: {
+        label: "Chef",
+        root: "culinary",
+    },
+    civilPlanner: {
+        label: "Civil Planner",
+        root: "civilDesigner",
+        requires: ["ecoLifestyle"],
+    },
+    comedian: {
+        label: "Comedian",
+        root: "entertainer",
+    },
+    computerEngineer: {
+        label: "Computer Engineer",
+        root: "engineer",
+        requires: ["discoverUniversity"],
+    },
+    convertOperator: {
+        label: "Covert Operator",
+        root: "military",
+        requires: ["strangerVille"],
+    },
+    detective: {
+        label: "Detective",
+        root: "detective",
+        requires: ["getToWork"],
+    },
+    diamondAgent: {
+        label: "Diamond Agent",
+        root: "secretAgent",
+    },
+    doctor: {
+        label: "Doctor",
+        root: "doctor",
+    },
+    environmentalManager: {
+        label: "Environmental Manager",
+        root: "conservationist",
+        requires: ["islandLiving"],
+    },
+    eSportGamer: {
+        label: "eSport Gamer",
+        root: "techGuru",
+    },
+    floralDesigner: {
+        label: "Floral Designer",
+        root: "gardener",
+        requires: ["seasons"],
+    },
+    foodCritic: {
+        label: "Food Critic",
+        root: "critic",
+        requires: ["cityLiving"],
+    },
+    freelancer: {
+        label: "Freelancer",
+        root: "freelancer",
+    },
+    greenTechnician: {
+        label: "Green Technician",
+        root: "civilDesigner",
+        requires: ["ecoLifestyle"],
+    },
+    internetPersonality: {
+        label: "Internet Personality",
+        root: "socialMedia",
+    },
+    interstellarSmuggler: {
+        label: "Interstellar Smuggler",
+        root: "astronaut",
+    },
+    investor: {
+        label: "Investor",
+        root: "business",
+    },
+    journalist: {
+        label: "Journalist",
+        root: "writer",
+    },
+    judge: {
+        label: "Judge",
+        root: "law",
+        requires: ["discoverUniversity"],
+    },
+    management: {
+        label: "Management",
+        root: "business",
+    },
+    marineBiologist: {
+        label: "Marine Biologist",
+        root: "conservationist",
+        requires: ["islandLiving"],
+    },
+    masterOfTheReal: {
+        label: "Master of the Real",
+        root: "painter",
+    },
+    mechanicalEngineer: {
+        label: "Mechanical Engineer",
+        root: "engineer",
+        requires: ["discoverUniversity"],
+    },
+    mixologist: {
+        label: "Mixologist",
+        root: "culinary",
+    },
+    musician: {
+        label: "Musician",
+        root: "entertainer",
+    },
+    officer: {
+        label: "Officer",
+        root: "military",
+        requires: ["strangerVille"],
+    },
+    oracle: {
+        label: "Oracle",
+        root: "criminal",
+    },
+    patronOfTheArts: {
+        label: "Patron of the Arts",
+        root: "painter",
+    },
+    politician: {
+        label: "Politician",
+        root: "politician",
+        requires: ["cityLiving"],
+    },
+    privateAttorney: {
+        label: "Private Attorney",
+        root: "law",
+        requires: ["discoverUniversity"],
+    },
+    professionalAthlete: {
+        label: "Professional Athlete",
+        root: "athlete",
+    },
+    professor: {
+        label: "Professor",
+        root: "education",
+        requires: ["discoverUniversity"],
+    },
+    publicRelations: {
+        label: "Public Relations",
+        root: "socialMedia",
+    },
+    scientist: {
+        label: "Scientist",
+        root: "scientist",
+        requires: ["getToWork"],
+    },
+    spaceRanger: {
+        label: "Space Ranger",
+        root: "astronaut",
+    },
+    startUpEntrepreneur: {
+        label: "Start Up Entrepreneur",
+        root: "techGuru",
+    },
+    stylist: {
+        label: "Stylist",
+        root: "styleInfluencer",
+    },
+    trendSetter: {
+        label: "Trend Setter",
+        root: "styleInfluencer",
+    },
+    villain: {
+        label: "Villain",
+        root: "secretAgent",
+    },
+};
+
+export const careerOptions = () => {
+    return Object.keys(careers).map((key) => (
+        <option key={key} value={key}>
+            {careers[key].label}
+        </option>
+    ));
+};
