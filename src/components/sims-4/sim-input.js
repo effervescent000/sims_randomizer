@@ -123,8 +123,8 @@ const SimInput = ({ setSimInputData, simInputData }) => {
                 </select>
             </div>
             <div className="input-wrapper">
-                <label htmlFor="aspiratonSelect">Aspiration</label>
-                <select name="aspiratonSelect" onChange={handleChange} value={aspirationInput}>
+                <label htmlFor="aspirationSelect">Aspiration</label>
+                <select name="aspirationSelect" onChange={handleChange} value={aspirationInput}>
                     {aspirationOptions()}
                 </select>
             </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import sortArray from "sort-array";
 
 import { aspirations, careers } from "../../helpers/sims-4-data";
+import { randomChoice } from "../../helpers/random-choice";
 
 const SimOutput = ({ simInputData, weights }) => {
     const [aspirationRender, setAspirationRender] = useState([]);
@@ -15,12 +16,16 @@ const SimOutput = ({ simInputData, weights }) => {
     }, [weights, simInputData]);
 
     const renderTraits = () => {
-        return traits.map((trait) => {
-            return (
-                <div key={Object.keys(trait)[0]} className="trait-wrapper">
-                    {Object.values(trait)[0].label}
-                </div>
-            );
+        return traits.map((trait, index) => {
+            if (Object.keys(trait).length > 0) {
+                return (
+                    <div key={Object.keys(trait)[0]} className="trait-wrapper">
+                        {Object.values(trait)[0].label}
+                    </div>
+                );
+            } else {
+                return <div key={index}></div>;
+            }
         });
     };
 
@@ -33,11 +38,14 @@ const SimOutput = ({ simInputData, weights }) => {
             by: "weight",
             order: "desc",
         }).slice(0, 5);
+        const asp = randomChoice(aspirationArray);
         setAspirationRender(
             aspirationArray.map((aspiration) => {
                 return (
                     <div key={aspiration.name} className="aspiration-wrapper">
-                        <div className="name">{aspirations[aspiration.name].label}</div>
+                        <div className={`name${aspiration.name === asp ? " bold" : ""}`}>
+                            {aspirations[aspiration.name].label}
+                        </div>
                         <div className="weight">{aspiration.weight}</div>
                     </div>
                 );
@@ -54,11 +62,14 @@ const SimOutput = ({ simInputData, weights }) => {
             by: "weight",
             order: "desc",
         }).slice(0, 5);
+        const car = randomChoice(careersArray);
         setCareerRender(
             careersArray.map((career) => {
                 return (
                     <div key={career.name} className="career-wrapper">
-                        <div className="name">{careers[career.name].label}</div>
+                        <div className={`name${career.name === car ? " bold" : ""}`}>
+                            {careers[career.name].label}
+                        </div>
                         <div className="weight">{career.weight}</div>
                     </div>
                 );

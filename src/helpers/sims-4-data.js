@@ -705,8 +705,30 @@ export const careers = {
         root: "critic",
         requires: ["cityLiving"],
     },
-    freelancer: {
-        label: "Freelancer",
+    freelancerDigitalArtist: {
+        label: "Digital Artist",
+        root: "freelancer",
+    },
+    freelancerProgrammer: {
+        label: "Programmer",
+        root: "freelancer",
+    },
+    freelancerWriter: {
+        label: "Writer",
+        root: "freelancer",
+    },
+    freelancerFashionPhotographer: {
+        label: "Fashion Photographer",
+        root: "freelancer",
+        requires: ["moschino"],
+    },
+    freelancerCrafter: {
+        label: "Crafter",
+        root: "freelancer",
+        requires: ["ecoLifestyle"],
+    },
+    freelancerParanormalInvestigator: {
+        label: "Paranormal Investigator",
         root: "freelancer",
     },
     greenTechnician: {
@@ -717,6 +739,7 @@ export const careers = {
     internetPersonality: {
         label: "Internet Personality",
         root: "socialMedia",
+        requires: ["cityLiving"],
     },
     interstellarSmuggler: {
         label: "Interstellar Smuggler",
@@ -796,6 +819,7 @@ export const careers = {
     publicRelations: {
         label: "Public Relations",
         root: "socialMedia",
+        requires: ["cityLiving"],
     },
     scientist: {
         label: "Scientist",
