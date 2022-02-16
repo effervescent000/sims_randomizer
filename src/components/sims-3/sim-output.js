@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import sortArray from "sort-array";
 
 import { lifetimeWishes, careers } from "../../helpers/sims-3-data";
+import { randomChoice } from "../../helpers/random-choice";
 
 const SimOutput = ({ simInputData, weights }) => {
     const [lifetimeWishRender, setLifetimeWishRender] = useState([]);
@@ -23,11 +24,14 @@ const SimOutput = ({ simInputData, weights }) => {
             by: "weight",
             order: "desc",
         }).slice(0, 5);
+        const ltw = randomChoice(ltwArray);
         setLifetimeWishRender(
             ltwArray.map((wish) => {
                 return (
                     <div key={wish.name} className="aspiration-wrapper">
-                        <div className="name">{lifetimeWishes[wish.name].label}</div>
+                        <div className={`name ${wish.name === ltw ? "bold" : ""}`}>
+                            {lifetimeWishes[wish.name].label}
+                        </div>
                         <div className="weight">{wish.weight}</div>
                     </div>
                 );
