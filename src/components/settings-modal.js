@@ -21,20 +21,29 @@ const SettingsModal = ({ isOpen, toggle }) => {
         <Modal isOpen={isOpen} toggle={toggle}>
             <Formik
                 initialValues={{
-                    getTogether: settings.getTogether || true,
+                    ambitions: settings.ambitions || true,
                     cityLiving: settings.cityLiving || true,
-                    vampires: settings.vampires || true,
                     discoverUniversity: settings.discoverUniversity || true,
+                    getTogether: settings.getTogether || true,
+                    vampires: settings.vampires || true,
                 }}
                 onSubmit={(values) => {
                     setSettingValues(values);
                 }}
             >
                 <Form>
-                    <Checkbox label="Get Together" name="getTogether" />
-                    <Checkbox label="City Living" name="cityLiving" />
-                    <Checkbox label="Vampires" name="vampires" />
-                    <Checkbox label="Discover University" name="discoverUniversity" />
+                    <div className="game-options-wrapper">
+                        <h2>Sims 3</h2>
+                        <Checkbox label="Ambitions" name="ambitions" />
+                    </div>
+                    <div className="game-options-wrapper">
+                        <h2>Sims 4</h2>
+                        <Checkbox label="Get Together" name="getTogether" />
+                        <Checkbox label="City Living" name="cityLiving" />
+                        <Checkbox label="Vampires" name="vampires" />
+                        <Checkbox label="Discover University" name="discoverUniversity" />
+                    </div>
+
                     <button type="submit">Save</button>
                 </Form>
             </Formik>
