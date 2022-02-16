@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sortArray from "sort-array";
 
-import { lifetimeWishes } from "../../helpers/sims-3-data";
+import { lifetimeWishes, careers } from "../../helpers/sims-3-data";
 
 const SimOutput = ({ simInputData, weights }) => {
     const [lifetimeWishRender, setLifetimeWishRender] = useState([]);
@@ -11,7 +11,7 @@ const SimOutput = ({ simInputData, weights }) => {
     useEffect(() => {
         renderLifetimeWishes();
         setTraits(simInputData.traits);
-        // renderCareers();
+        renderCareers();
     }, [weights, simInputData]);
 
     const renderLifetimeWishes = () => {
@@ -19,16 +19,37 @@ const SimOutput = ({ simInputData, weights }) => {
         for (const [key, value] of Object.entries(weights.lifetimeWish)) {
             ltwArray.push({ name: key, weight: value });
         }
-        ltwArray = sortArray(ltwArray, {
+        ltwArray = sortArray([...ltwArray], {
             by: "weight",
             order: "desc",
         }).slice(0, 5);
         setLifetimeWishRender(
-            ltwArray.map((lifetimeWish) => {
+            ltwArray.map((wish) => {
                 return (
-                    <div key={lifetimeWish.name} className="aspiration-wrapper">
-                        <div className="name">{lifetimeWishes[lifetimeWish.name].label}</div>
-                        <div className="weight">{lifetimeWish.weight}</div>
+                    <div key={wish.name} className="aspiration-wrapper">
+                        <div className="name">{lifetimeWishes[wish.name].label}</div>
+                        <div className="weight">{wish.weight}</div>
+                    </div>
+                );
+            })
+        );
+    };
+
+    const renderCareers = () => {
+        let carArray = [];
+        for (const [key, value] of Object.entries(weights.career)) {
+            carArray.push({ name: key, weight: value });
+        }
+        carArray = sortArray(carArray, {
+            by: "weight",
+            order: "desc",
+        }).slice(0, 5);
+        setCareerRender(
+            carArray.map((career) => {
+                return (
+                    <div key={career.name} className="career-wrapper">
+                        <div className="name">{careers[career.name].label}</div>
+                        <div className="weight">{career.weight}</div>
                     </div>
                 );
             })
@@ -36,12 +57,16 @@ const SimOutput = ({ simInputData, weights }) => {
     };
 
     const renderTraits = () => {
-        return traits.map((trait) => {
-            return (
-                <div key={Object.keys(trait)[0]} className="trait-wrapper">
-                    {Object.values(trait)[0].label}
-                </div>
-            );
+        return traits.map((trait, index) => {
+            if (Object.keys(trait).length > 0) {
+                return (
+                    <div key={Object.keys(trait)[0]} className="trait-wrapper">
+                        {Object.values(trait)[0].label}
+                    </div>
+                );
+            } else {
+                return <div key={index}></div>;
+            }
         });
     };
 

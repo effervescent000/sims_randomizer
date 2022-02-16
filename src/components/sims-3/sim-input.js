@@ -47,7 +47,7 @@ const SimInput = ({ setSimInputData, simInputData }) => {
         setSimInputData({
             age: age,
             traits: [trait1, trait2, trait3, trait4, trait5],
-            lifetimeWish: lifetimeWish,
+            lifetimeWish: lifetimeWishes[lifetimeWish],
         });
     };
 
