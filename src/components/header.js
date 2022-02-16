@@ -21,7 +21,10 @@ const Header = (props) => {
                     <NavbarBrand href="/">Sims Randomizer</NavbarBrand>
                     <Nav>
                         <NavItem>
-                            <NavLink href="/ts4">Sims 4</NavLink>
+                            <NavLink href="/">Sims 4</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/ts3">Sims 3</NavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>

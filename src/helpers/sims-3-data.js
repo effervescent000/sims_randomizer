@@ -1,4 +1,7 @@
 export const traits = {
+    none: {
+        label: "---",
+    },
     absentMinded: {
         label: "Absent-minded",
         conflicts: ["perceptive"],
@@ -324,6 +327,9 @@ export const traitOptions = () => {
 };
 
 export const lifetimeWishes = {
+    none: {
+        label: "---",
+    },
     aquarium: {
         label: "Presenting the Perfect Private Aquarium",
     },
