@@ -57,6 +57,7 @@ const GeneratePanel = (props) => {
             for (const traitObject of simInputData.traits) {
                 if (Object.keys(traitObject).length > 0) {
                     const traitName = Object.keys(traitObject)[0];
+                    console.log(traitName);
                     aspWeights = addWeight(aspWeights, aspirationWeightMapping[traitName]);
                     carWeights = addWeight(carWeights, careerWeightMapping[traitName]);
                 }

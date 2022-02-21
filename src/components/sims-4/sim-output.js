@@ -34,23 +34,25 @@ const SimOutput = ({ simInputData, weights }) => {
         for (const [key, value] of Object.entries(weights.aspiration)) {
             aspirationArray.push({ name: key, weight: value });
         }
-        aspirationArray = sortArray(aspirationArray, {
-            by: "weight",
-            order: "desc",
-        }).slice(0, 5);
-        const asp = randomChoice(aspirationArray);
-        setAspirationRender(
-            aspirationArray.map((aspiration) => {
-                return (
-                    <div key={aspiration.name} className="aspiration-wrapper">
-                        <div className={`name${aspiration.name === asp ? " bold" : ""}`}>
-                            {aspirations[aspiration.name].label}
+        if (aspirationArray.length > 0) {
+            aspirationArray = sortArray([...aspirationArray], {
+                by: "weight",
+                order: "desc",
+            }).slice(0, 5);
+            const asp = randomChoice(aspirationArray);
+            setAspirationRender(
+                aspirationArray.map((aspiration) => {
+                    return (
+                        <div key={aspiration.name} className="aspiration-wrapper">
+                            <div className={`name${aspiration.name === asp ? " bold" : ""}`}>
+                                {aspirations[aspiration.name].label}
+                            </div>
+                            <div className="weight">{aspiration.weight}</div>
                         </div>
-                        <div className="weight">{aspiration.weight}</div>
-                    </div>
-                );
-            })
-        );
+                    );
+                })
+            );
+        }
     };
 
     const renderCareers = () => {
@@ -58,23 +60,25 @@ const SimOutput = ({ simInputData, weights }) => {
         for (const [key, value] of Object.entries(weights.career)) {
             careersArray.push({ name: key, weight: value });
         }
-        careersArray = sortArray(careersArray, {
-            by: "weight",
-            order: "desc",
-        }).slice(0, 5);
-        const car = randomChoice(careersArray);
-        setCareerRender(
-            careersArray.map((career) => {
-                return (
-                    <div key={career.name} className="career-wrapper">
-                        <div className={`name${career.name === car ? " bold" : ""}`}>
-                            {careers[career.name].label}
+        if (careersArray.length > 0) {
+            careersArray = sortArray(careersArray, {
+                by: "weight",
+                order: "desc",
+            }).slice(0, 5);
+            const car = randomChoice(careersArray);
+            setCareerRender(
+                careersArray.map((career) => {
+                    return (
+                        <div key={career.name} className="career-wrapper">
+                            <div className={`name${career.name === car ? " bold" : ""}`}>
+                                {careers[career.name].label}
+                            </div>
+                            <div className="weight">{career.weight}</div>
                         </div>
-                        <div className="weight">{career.weight}</div>
-                    </div>
-                );
-            })
-        );
+                    );
+                })
+            );
+        }
     };
 
     return (

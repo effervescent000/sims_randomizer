@@ -13,5 +13,5 @@ export const randomChoice = (weights) => {
         }
     }
 
-    return weights[-1].name;
+    return weights.at(-1).name;
 };

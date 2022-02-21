@@ -23,6 +23,7 @@ const SettingsModal = ({ isOpen, toggle }) => {
                 initialValues={{
                     ambitions: settings.ambitions || true,
                     cityLiving: settings.cityLiving || true,
+                    cottageLiving: settings.cottageLiving || true,
                     discoverUniversity: settings.discoverUniversity || true,
                     getTogether: settings.getTogether || true,
                     vampires: settings.vampires || true,
@@ -40,6 +41,7 @@ const SettingsModal = ({ isOpen, toggle }) => {
                         <h2>Sims 4</h2>
                         <Checkbox label="Get Together" name="getTogether" />
                         <Checkbox label="City Living" name="cityLiving" />
+                        <Checkbox label="Cottage Living" name="cottageLiving" />
                         <Checkbox label="Vampires" name="vampires" />
                         <Checkbox label="Discover University" name="discoverUniversity" />
                     </div>

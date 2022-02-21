@@ -508,7 +508,10 @@ export const aspirationWeightMapping = {
     active: {},
     adventurous: {},
     ambitious: {},
-    animalEnthusiast: {},
+    animalEnthusiast: {
+        countryCaretaker: 5,
+        friendOfTheAnimals: 4,
+    },
     artLover: {
         painterExtraordinaire: 5,
         musicalGenius: 2,
@@ -545,7 +548,10 @@ export const aspirationWeightMapping = {
     dogLover: {},
     erratic: {},
     evil: {},
-    familyOriented: {},
+    familyOriented: {
+        soulmate: 3,
+        serialRomantic: -3,
+    },
     foodie: { masterChef: 5, masterMixologist: 3 },
     freegan: {},
     geek: { bodybuilder: -2, renaissanceSim: 2, nerdBrain: 5, computerWhiz: 5 },
@@ -572,13 +578,22 @@ export const aspirationWeightMapping = {
     lactoseIntolerant: {},
     lazy: {},
     loner: {},
-    lovesOutdoors: {},
+    lovesOutdoors: {
+        anglingAce: 5,
+        countryCaretaker: 3,
+        freelanceBotanist: 5,
+        beachLife: 3,
+    },
     maker: {},
     materialistic: {},
     mean: {},
     musicLover: {},
     neat: {},
-    noncommittal: {},
+    noncommittal: {
+        serialRomantic: 5,
+        soulmate: -5,
+        renaissanceSim: 3,
+    },
     outgoing: {
         friendOfTheAnimals: 4,
         masterActor: 1,
@@ -587,6 +602,7 @@ export const aspirationWeightMapping = {
         leaderOfThePack: 4,
         partyAnimal: 3,
         worldFamousCelebrity: 2,
+        serialRomantic: 1,
     },
     paranoid: {},
     perfectionist: {
@@ -599,9 +615,15 @@ export const aspirationWeightMapping = {
     },
     proper: {},
     recycleDisciple: {},
-    romantic: {},
+    romantic: {
+        serialRomantic: 5,
+        soulmate: 5,
+    },
     selfAbsorbed: {},
-    selfAssured: {},
+    selfAssured: {
+        fabulouslyWealthy: 2,
+        worldFamousCelebrity: 3,
+    },
     slob: {},
     snob: {},
     squeamish: {},
@@ -826,6 +848,10 @@ export const careers = {
         root: "scientist",
         requires: ["getToWork"],
     },
+    selfEmployed: {
+        label: "Self-Employed",
+        root: "selfEmployed",
+    },
     spaceRanger: {
         label: "Space Ranger",
         root: "astronaut",
@@ -859,8 +885,16 @@ export const careerOptions = () => {
 export const careerWeightMapping = {
     active: {},
     adventurous: {},
-    ambitious: {},
-    animalEnthusiast: {},
+    ambitious: {
+        professionalAthlete: 2,
+        investor: 2,
+        musician: 2,
+        startUpEntrepreneur: 2,
+        politician: 3,
+    },
+    animalEnthusiast: {
+        selfEmployed: 1,
+    },
     artLover: {
         artsCritic: 5,
         author: 2,
@@ -900,10 +934,12 @@ export const careerWeightMapping = {
     geek: {
         computerEngineer: 5,
         eSportGamer: 5,
-        freelancer: 3,
+        freelancerProgrammer: 3,
+        freelancerDigitalArtist: 1,
         mechanicalEngineer: 4,
         scientist: 5,
         startUpEntrepreneur: 3,
+        oracle: 3,
     },
     genius: {},
     gloomy: {},
@@ -926,7 +962,9 @@ export const careerWeightMapping = {
     mean: {},
     musicLover: {},
     neat: {},
-    noncommittal: {},
+    noncommittal: {
+        selfEmployed: 5,
+    },
     outgoing: {
         actor: 1,
         comedian: 1,
@@ -949,7 +987,9 @@ export const careerWeightMapping = {
     recycleDisciple: {},
     romantic: {},
     selfAbsorbed: {},
-    selfAssured: {},
+    selfAssured: {
+        actor: 2,
+    },
     slob: {},
     snob: {},
     squeamish: {},
@@ -965,8 +1005,16 @@ export const careerWeightMapping = {
     bodybuilder: {},
     chiefOfMischief: {},
     cityNative: {},
-    computerWhiz: {},
-    countryCaretaker: {},
+    computerWhiz: {
+        freelancerDigitalArtist: 1,
+        freelancerProgrammer: 5,
+        oracle: 3,
+    },
+    countryCaretaker: {
+        selfEmployed: 5,
+        environmentalManager: 3,
+        botanist: 3,
+    },
     ecoInnovator: {},
     extremeSportsEnthusiast: {},
     fabulouslyFilthy: {},

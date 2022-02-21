@@ -24,19 +24,21 @@ const SimOutput = ({ simInputData, weights }) => {
             by: "weight",
             order: "desc",
         }).slice(0, 5);
-        const ltw = randomChoice(ltwArray);
-        setLifetimeWishRender(
-            ltwArray.map((wish) => {
-                return (
-                    <div key={wish.name} className="aspiration-wrapper">
-                        <div className={`name ${wish.name === ltw ? "bold" : ""}`}>
-                            {lifetimeWishes[wish.name].label}
+        if (ltwArray.length > 0) {
+            const ltw = randomChoice(ltwArray);
+            setLifetimeWishRender(
+                ltwArray.map((wish) => {
+                    return (
+                        <div key={wish.name} className="aspiration-wrapper">
+                            <div className={`name ${wish.name === ltw ? "bold" : ""}`}>
+                                {lifetimeWishes[wish.name].label}
+                            </div>
+                            <div className="weight">{wish.weight}</div>
                         </div>
-                        <div className="weight">{wish.weight}</div>
-                    </div>
-                );
-            })
-        );
+                    );
+                })
+            );
+        }
     };
 
     const renderCareers = () => {
@@ -48,16 +50,18 @@ const SimOutput = ({ simInputData, weights }) => {
             by: "weight",
             order: "desc",
         }).slice(0, 5);
-        setCareerRender(
-            carArray.map((career) => {
-                return (
-                    <div key={career.name} className="career-wrapper">
-                        <div className="name">{careers[career.name].label}</div>
-                        <div className="weight">{career.weight}</div>
-                    </div>
-                );
-            })
-        );
+        if (carArray.length > 0) {
+            setCareerRender(
+                carArray.map((career) => {
+                    return (
+                        <div key={career.name} className="career-wrapper">
+                            <div className="name">{careers[career.name].label}</div>
+                            <div className="weight">{career.weight}</div>
+                        </div>
+                    );
+                })
+            );
+        }
     };
 
     const renderTraits = () => {
